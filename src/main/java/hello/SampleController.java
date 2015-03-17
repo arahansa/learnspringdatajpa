@@ -3,12 +3,18 @@ package hello;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 @EnableAutoConfiguration
-@ComponentScan("controller")
+@ComponentScan(basePackages = {
+        "controller",
+        "domain",
+        "repository"
+})
+@Configuration
 public class SampleController {
 
     @RequestMapping("/")
