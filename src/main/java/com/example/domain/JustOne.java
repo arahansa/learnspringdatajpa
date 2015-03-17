@@ -1,4 +1,4 @@
-package domain;
+package com.example.domain;
 
 import java.util.Date;
 
@@ -9,12 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 public class JustOne {
 
-	@Id
-	@GeneratedValue
+	@Id // 주키생성 
+	@GeneratedValue //자동생성. 자세한 것은 API 혹은 서적 참고
 	private Long id;
 	
 	@Column(name="msg" , length=100) //테이블에 저장될 때 컬럼네임 msg, 길이 100
@@ -23,9 +24,11 @@ public class JustOne {
 	@Temporal(TemporalType.DATE) //날짜 저장형식. type 에 date, time, timestamp
 	private Date dateJoin;
 	
-	@Enumerated // enum 저장 형식. 
+	@Enumerated // enum 저장 형식. 자세한 것은 API 혹은 서적 참고
 	private JustOneEnum enumOne;
 
+	@Transient // transient 는 저장하지 않습니다.
+	private String passwordConfirm;
 	
 	
 	public Long getId() {

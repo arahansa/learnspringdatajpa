@@ -1,11 +1,11 @@
-package repository;
+package com.example.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import domain.JustOne;
+import com.example.domain.JustOne;
 
-@Repository
+
 public interface JustOneRepository extends JpaRepository<JustOne, Long>{
 
 }
