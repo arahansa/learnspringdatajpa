@@ -62,6 +62,16 @@ public class JustOne {
 	public void setEnumOne(JustOneEnum enumOne) {
 		this.enumOne = enumOne;
 	}
+
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
+
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
+	}
+	
+	
 	
 	
 	

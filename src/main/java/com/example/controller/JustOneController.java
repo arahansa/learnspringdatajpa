@@ -21,6 +21,7 @@ public class JustOneController {
 		one.setDateJoin(new Date());
 		one.setEnumOne(JustOneEnum.ONE);
 		one.setMessage("hello");
+		one.setPasswordConfirm("1234");
 		repository.save(one);
 		return "test/test";
 	}
