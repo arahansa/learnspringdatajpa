@@ -40,7 +40,6 @@ public class OnetoManyController {
 	@RequestMapping("/univandstudents")
 	public String univandstudents() {
 		University getUniversity = repository.getOne(1L);
-		getUniversity.getStudents();
 		return getUniversity.toStringPlusStudents();
 	}
 	
