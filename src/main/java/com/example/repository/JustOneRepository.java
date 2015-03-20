@@ -6,5 +6,5 @@ import com.example.domain.JustOne;
 
 
 public interface JustOneRepository extends JpaRepository<JustOne, Long>{
-
+	public JustOne findByMessage(String message);
 }
