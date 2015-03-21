@@ -21,6 +21,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.SampleController;
@@ -31,6 +32,7 @@ import com.example.domain.JustOneEnum;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes=SampleController.class)
 @Transactional
+@ActiveProfiles("test")
 public class JustOneRepositoryTest {
 
 	private static final int numRequest = 10;
