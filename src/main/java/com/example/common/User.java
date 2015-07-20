@@ -28,9 +28,7 @@ public class User {
 			)
 	private List<BoardArticle> articles;
 	
-	@OneToMany(targetEntity=User.class,
-			mappedBy="user")
-	private List<Comment> comments;
+	
 	
 
 	
@@ -74,15 +72,7 @@ public class User {
 		this.articles = articles;
 	}
 	
-	public List<Comment> getComments()
-	{
-		return comments;
-	}
 
-	public void setComments(List<Comment> comments)
-	{
-		this.comments = comments;
-	}
 
 	@Override
 	public String toString()

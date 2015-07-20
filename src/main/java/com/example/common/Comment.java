@@ -22,9 +22,9 @@ public class Comment {
 	@JoinColumn(name="article_id")
 	private BoardArticle article;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="user_id")
-	private User user;
+	private User user;*/
 	
 	
 
