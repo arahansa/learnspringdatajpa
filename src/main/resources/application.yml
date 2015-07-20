@@ -1,0 +1,6 @@
+spring.profiles.active: local
+
+spring:
+  view:
+    prefix: /WEB-INF/views/
+    suffix: .jsp
