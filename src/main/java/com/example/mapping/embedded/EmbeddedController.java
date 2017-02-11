@@ -19,10 +19,15 @@ public class EmbeddedController {
 		Leg leg = new Leg();
 		leg.setKneePowerLeft(100);
 		leg.setKneePowerRight(200);
+
+		Leg leg2 = new Leg();
+		leg2.setKneePowerLeft(1001);
+		leg2.setKneePowerRight(2002);
 		
 		
 		HumanBody body = new HumanBody();
-		body.setLeg(leg);
+		body.setLeg1(leg);
+		body.setLeg2(leg2);
 		body.setOwnerName("arhanasa");
 		repository.save(body);
 		model.addAttribute("data", repository.findAll());

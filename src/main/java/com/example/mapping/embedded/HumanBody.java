@@ -11,6 +11,7 @@ import javax.persistence.Id;
 //I had to make class quickly. naming is not good^^;; excuse me. hehe.
 
 @Entity
+@lombok.Data
 public class HumanBody {
 
 	@Id
@@ -22,18 +23,25 @@ public class HumanBody {
 	
 	@Embedded
 	@AttributeOverrides({
-		@AttributeOverride(name="myleftkneepower", column=@Column(name="kneepowerleft")),
-		@AttributeOverride(name="myrightkneepower", column=@Column(name="kneepowerright")),
+					@AttributeOverride(name="kneePowerLeft", column=@Column(name="kneepowerleft1")),
+					@AttributeOverride(name="kneePowerRight", column=@Column(name="kneepowerright2")),
 	})
-	private Leg leg;
+	private Leg leg1;
+
+	@Embedded
+	@AttributeOverrides({
+					@AttributeOverride(name="kneePowerLeft", column=@Column(name="kneepowerleft3")),
+					@AttributeOverride(name="kneePowerRight", column=@Column(name="kneepowerright4")),
+	})
+	private Leg leg2;
 	
 	
 
-	public HumanBody(Long id, String ownerName, Leg leg) {
+	public HumanBody(Long id, String ownerName, Leg leg1) {
 		super();
 		this.id = id;
 		this.ownerName = ownerName;
-		this.leg = leg;
+		this.leg1 = leg1;
 	}
 
 	public HumanBody() {
@@ -60,22 +68,7 @@ public class HumanBody {
 		this.ownerName = ownerName;
 	}
 
-	public Leg getLeg()
-	{
-		return leg;
-	}
 
-	public void setLeg(Leg leg)
-	{
-		this.leg = leg;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "Body [id=" + id + ", ownerName=" + ownerName + ", leg=" + leg
-				+ "]";
-	}
 	
 	
 	
